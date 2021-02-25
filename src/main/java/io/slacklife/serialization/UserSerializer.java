@@ -16,13 +16,13 @@ public class UserSerializer implements Serializer<User> {
 
   @Override
   public void configure(Map<String, ?> configs, boolean isKey) {
-    String propertyName = isKey ? "key.serializer.encoding" : "value.serializer.encoding";
-    Object encodingValue = configs.get(propertyName);
-    if (encodingValue == null) {
-      encodingValue = configs.get("serializer.encoding");
+    String propName = isKey ? "key.serializer.encoding" : "value.serializer.encoding";
+    Object serialiseEncodingObj = configs.get(propName);
+    if (serialiseEncodingObj == null) {
+      serialiseEncodingObj = configs.get("serializer.encoding");
     }
-    if (encodingValue instanceof String) {
-      this.encoding = (String) encodingValue;
+    if (serialiseEncodingObj instanceof String) {
+      this.encoding = (String) serialiseEncodingObj;
     }
   }
 
@@ -44,6 +44,11 @@ public class UserSerializer implements Serializer<User> {
       throw new SerializationException(
           "Error when serializing User Data to byte[] due to unsupported encoding " + encoding);
     }
+
+  }
+
+  @Override
+  public void close() {
 
   }
 }

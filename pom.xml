@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>io.slacklife</groupId>
-	<artifactId>kstreams</artifactId>
+	<artifactId>catch-the-kstream</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>kstreams</name>
+	<name>catch-the-kstream</name>
 	<description>Spring Boot Kafka Streams example</description>
 	<properties>
 		<java.version>11</java.version>

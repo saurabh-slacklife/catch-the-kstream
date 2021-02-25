@@ -29,8 +29,8 @@ public class ProducerAppTest {
   @Test
   public void callProducer() {
     User user = new User();
-    user.setId("id-4");
-    user.setName("Saurabh");
+    user.setId("id-8");
+    user.setName("Saurabhqq");
 
     ProducerRecord<String, User> producerRecord = new ProducerRecord<>("user", user.getId(), user);
 

@@ -6,10 +6,9 @@ import io.slacklife.serialization.UserSerializer;
 import org.apache.kafka.common.serialization.Serde;
 import org.apache.kafka.common.serialization.Serdes;
 
-public class UserSerde extends Serdes {
+public class UserSerdes extends Serdes {
 
-
-  static public Serde<User> UserSerde() {
+  static public final Serde<User> User() {
     return Serdes.serdeFrom(new UserSerializer(), new UserDeserializer());
   }
 
